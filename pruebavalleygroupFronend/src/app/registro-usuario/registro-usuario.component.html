@@ -1,0 +1,29 @@
+
+  <mat-card>
+    <mat-card-content>
+        <!--<img mat-card-lg-image src="assets/img/logo.png">-->
+        <!--<img mat-card-lg-image src="assets/img/logocali24h.png">-->
+        <!--<img mat-card-lg-image src="assets/img/logo24-54.png">-->        
+      <form [formGroup]="angForm" (ngSubmit)="onSubmit()">
+        
+        <h1>Registro de Usuario</h1>
+        
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="Usuario o Nit" formControlName="userName" required>
+          <mat-error *ngIf="isFieldInvalid('userName')">
+            Por favor ingrese su nombre de usuario.
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input matInput type="password" placeholder="Contraseña" formControlName="password" required>
+          <mat-error *ngIf="isFieldInvalid('password')">
+            Ingrese la contraseña por favor.
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button  type="submit" color="primary">Ingresar</button>
+        
+      </form>
+      
+    </mat-card-content>
+  </mat-card>
+
